@@ -1,4 +1,5 @@
-MOODLE - PRÉ REQUISITOS PARA INICIAR A INSTALAÇÃO
+# MOODLE - PRÉ REQUISITOS PARA INICIAR A INSTALAÇÃO #
+
 Antes de iniciar a instalação é necessário que todo o ambiente web que funcionará por trás do Moodle esteja com as configurações mínimas para o perfeito funcionamento do Moodle. Além disso, as configurações devem suportar pelo menos 1000 (hum mil) usuários simultâneos na plataforma.
 
 Servidor virtual para a aplicação (Produção)
