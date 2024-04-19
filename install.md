@@ -50,6 +50,15 @@ Se tudo estiver correto, a tela a seguir será mostrada:
 
 Obs: Confirme no conteiner do banco em qual IP ele está rodando.
 
+--> Clique no botão "Next" ou "Continuar"
+
+A tela a seguir será mostrada:
+
+![image](https://github.com/robertooliveirasesi/Moodle/assets/166535151/202514e7-4b90-4ed6-8a2f-c0a661a32978)
+
+Se o servidor atender à todos os requisitos da versão do Moodle, todos os STATUS devem estar "OK" ou "Verificar". Caso contrário a instalação não proseguirá até que essas condições sejam satisfeitas
+
+--> Clique no botão "Next" ou "Continuar"
 
 
 
