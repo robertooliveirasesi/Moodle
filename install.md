@@ -17,6 +17,8 @@ docker build -t moodle:4.2 .
 
 Certifique-se de estar na mesma pasta do arquivo Dockerfile ou apontar para a pasta correta.
 
+O Arquivo Dockerfile do Moodle versão 4.2 está na pasta Moodle/Moodle4.2
+
 ## 4. Criação do conteiner do moodle da imagem criada acima
 docker run -d --name moodle-app -p 9090:80 --mount src=vol-moodle-app,dst=/var/www/moodledata -e MOODLE_DATABASE_NAME="moodle" -e MOODLE_DATABASE_USER="moodle_user" -e MOODLE_DATABASE_PASSSWORD="moodle_pass" -e MOODLE_DATABASE_HOST="moodle-man-db" moodle:4.2
 
