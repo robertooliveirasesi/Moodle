@@ -12,12 +12,14 @@ services:
       - php
     networks:
       - moddle-network
+
   php:
     image: php:8-fpm
     volumes:
       - .:/var/www/html
     networks:
       - moddle-network
+
   mysql:
     image: "mysql/mysql-server:8.0"
     ports:
@@ -28,6 +30,8 @@ services:
       MYSQL_USER: moodleroot
     networks:
       - moddle-network
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   moodle:
     image: erseco/alpine-moodle
@@ -36,9 +40,9 @@ services:
     environment:
       - LANG=pt_BR.UTF-8
       - SITE_URL=http://localhost
-      - DB_TYPE=pgsql
-      - DB_HOST=postgres
-      - DB_PORT=5432
+      - DB_TYPE=mysql  # Corrigido para MySQL
+      - DB_HOST=mysql  # Corrigido para mysql
+      - DB_PORT=3306  # Corrigido para a porta do MySQL
       - DB_NAME=moodle
       - DB_USER=moodleroot
       - DB_PASS=MoodleRoot
@@ -49,16 +53,19 @@ services:
       - MOODLE_PASSWORD=PLEASE_CHANGEME
       - MOODLE_MAIL_NOREPLY_ADDRESS=noreply@localhost
       - MOODLE_MAIL_PREFIX=[moodle]
-    ports:
-      - 80:8080
     volumes:
-      - moodledata:/var/www/moodledata
-      - moodlehtml:/var/www/html
+      - moodle-data:/var/www/moodledata
+      - moodle-html:/var/www/html
     depends_on:
       - mysql
       - nginx
+    networks:
+      - moddle-network
+
+networks:
+  moddle-network:
 
 volumes:
-  postgres: null
-  moodledata: null
-  moodlehtml: null
+  mysql-data:
+  moodle-data:
+  moodle-html:
