@@ -27,8 +27,10 @@ services:
       MOODLE_DATABASE_PASSWORD: moodle_pass
       MOODLE_DATABASE_HOST: moodle-db
     volumes:
-      - vol-app:/var/www/moodledata
+      - vol-appdata:/var/www/moodledata
+      - vol-app:/var/www/html
 
 volumes:
   vol-db:
+  vol-appdata:
   vol-app:
