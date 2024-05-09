@@ -23,7 +23,7 @@ RUN set -ex \
         echo 'always_populate_raw_post_data = -1'; \
         echo 'cgi.fix_pathinfo = 1'; \
         echo 'session.auto_start = 0'; \
-        echo 'upload_max_filesize = 100M'; \
+        echo 'upload_max_filesize = 128M'; \
         echo 'post_max_size = 150M'; \
         echo 'max_execution_time = 1800'; \
         echo 'max_input_vars = 5000'; \
